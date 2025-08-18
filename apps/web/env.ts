@@ -1,23 +1,15 @@
-import { keys as cms } from '@repo/cms/keys';
-import { keys as email } from '@repo/email/keys';
-import { keys as flags } from '@repo/feature-flags/keys';
-import { keys as core } from '@repo/next-config/keys';
-import { keys as observability } from '@repo/observability/keys';
-import { keys as rateLimit } from '@repo/rate-limit/keys';
-import { keys as security } from '@repo/security/keys';
 import { createEnv } from '@t3-oss/env-nextjs';
+import { z } from 'zod';
 
 export const env = createEnv({
-  extends: [
-    cms(),
-    core(),
-    email(),
-    observability(),
-    flags(),
-    security(),
-    rateLimit(),
-  ],
   server: {},
-  client: {},
-  runtimeEnv: {},
+  client: {
+    NEXT_PUBLIC_APP_URL: z.string().url().default('http://localhost:3001'),
+    NEXT_PUBLIC_WEB_URL: z.string().url().default('http://localhost:3001'),
+  },
+  runtimeEnv: {
+    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3001',
+    NEXT_PUBLIC_WEB_URL: process.env.NEXT_PUBLIC_WEB_URL || 'http://localhost:3001',
+  },
 });
+

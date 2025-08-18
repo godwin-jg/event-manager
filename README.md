@@ -1,31 +1,20 @@
-# ▲ / next-forge
+# Event Manager
 
-**Production-grade Turborepo template for Next.js apps.**
+A simple event management application built with Next.js, Tailwind CSS, Zustand, and React Hook Form.
 
-<div>
-  <img src="https://img.shields.io/npm/dy/next-forge" alt="" />
-  <img src="https://img.shields.io/npm/v/next-forge" alt="" />
-  <img src="https://img.shields.io/github/license/vercel/next-forge" alt="" />
-</div>
+## How to Run
 
-## Overview
-
-[next-forge](https://github.com/vercel/next-forge) is a [Next.js](https://nextjs.org/) project boilerplate for modern web application. It is designed to be a comprehensive starting point for new apps, providing a solid, opinionated foundation with a minimal amount of configuration.
-
-## Getting Started
-
-Clone the repo using:
-
-```sh
-npx next-forge@latest init
+```bash
+pnpm install
+pnpm dev
 ```
 
-Then read the [docs](https://www.next-forge.com/docs) for more information.
+## Path of the Page
 
-## Contributors
+- **Home**: `/` - Landing page
+- **Events**: `/events` - Event management page with add, search, and delete functionality
 
-<a href="https://github.com/vercel/next-forge/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=vercel/next-forge" />
-</a>
+## Notes/Assumptions
 
-Made with [contrib.rocks](https://contrib.rocks).
+- **State Management**: Zustand with localStorage persistence
+- **Forms**: React Hook Form 
