@@ -16,5 +16,7 @@ pnpm dev
 
 ## Notes/Assumptions
 
+- **App runs from the Next-Forge Turbo template**
 - **State Management**: Zustand with localStorage persistence
 - **Forms**: React Hook Form 
+- **Project Cleanup**: Cleaned up unnecessary environment variables (Basehub, Sentry, Resend, etc.) from setup
